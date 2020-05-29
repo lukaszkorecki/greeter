@@ -4,6 +4,7 @@
     [com.stuartsierra.component :as component]
     [duckula.component.basic-monitoring :as monitoring]
     [duckula.handler]
+    [duckula.middleware]
     [duckula.swagger]
     [greeter.server :as server]))
 
@@ -25,8 +26,13 @@
                                     :fields [{:name "message" :type "string"}]}}}})
 
 
-(def api (duckula.handler/build api-config))
-(def api-with-docs (duckula.swagger/with-docs api-config))
+(def api (duckula.middleware/wrap-handler
+          (duckula.handler/build
+           api-config)))
+
+(def api-with-docs (duckula.middleware/wrap-handler
+                    (duckula.swagger/with-docs
+                      api-config))
 
 (def system
   (merge
