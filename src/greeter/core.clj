@@ -32,7 +32,7 @@
 
 (def api-with-docs (duckula.middleware/wrap-handler
                     (duckula.swagger/with-docs
-                      api-config))
+                      api-config)))
 
 (def system
   (merge
