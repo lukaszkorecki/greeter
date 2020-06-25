@@ -46,3 +46,8 @@ WITH_SWAGGER=1 lein run
 then go to
 
 http://localhost:9100/~docs/ui
+
+
+# Clojure/north slides
+
+https://preview.pitch.com/app/presentation/87287202-5035-4d66-9158-2077946202e0/8e192358-8791-43d6-9e26-7a6a58938655
